@@ -1,0 +1,18 @@
+little-weather-forecast:
+  client:
+    open-weather:
+      base-url: https://api.openweathermap.org/data/2.5
+  api-key: ${little-weather-forecast.client.open-weather.api-key:LITTLE_WEATHER_FORECAST_CLIENT_OPEN_WEATHER_API_KEY}
+  service:
+    city-name-service:
+      in-memory:
+        city-list-resource-path: classpath:city.list.json
+  cache:
+    time-to-live: PT10H
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api/docs
+  swagger-ui:
+    path: /api/docs/swagger-ui
